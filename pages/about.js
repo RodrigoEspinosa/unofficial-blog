@@ -27,6 +27,10 @@ export default function About() {
                 .thanks {
                     font-size: 11px;
                 }
+                @media (max-width: 800px){
+                   .thanks {
+                       font-size: 9px;
+                   }
                 `}
             </style>
         </Layout>

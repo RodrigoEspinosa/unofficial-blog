@@ -131,7 +131,7 @@ const Person = props => (
                 max-height: 20vh; 
             }
             .personInfo {
-                padding: 35%;
+                padding: 30%;
             }
           }
       `}</style>

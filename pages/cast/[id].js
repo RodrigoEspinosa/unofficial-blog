@@ -110,6 +110,7 @@ const Cast = props => (
                 grid-row-end: 3;
                 justify-self: center;
                 margin: 0;
+                text-align: center;
             }
             .list {
                 grid-column-start: 1;

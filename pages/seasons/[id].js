@@ -4,8 +4,9 @@ import fetch from 'isomorphic-unfetch';
 
 const Episodes = props => (
     <Layout>
+        <h1 className="title">{props.show.name}'s Unofficial Blog</h1>
         <div className="container">
-            <h1 className="title">{props.show.name}'s Unofficial Blog</h1>
+
             <div className="list">
                 <h2>All seasons!</h2>
                 <ul>
@@ -38,6 +39,7 @@ const Episodes = props => (
             align-items: center;
             justify-content: center;
             margin-bottom: 0px;
+            margin-top: 7vh;
         }
         ul {
             border: 1px solid #DDD;
@@ -52,6 +54,7 @@ const Episodes = props => (
                 align-items: center;
                 justify-content: center;
                 text-align: center;
+                flex: 1;
         }
         li {
             list-style-type: none;
@@ -67,19 +70,19 @@ const Episodes = props => (
                 grid-row-end: 5;
                 justify-self: center;
                 margin-top: 20px;
+                padding: 2%;
         }
         .img img {
-            object-fit: cover;
-           max-height: 100%;         
+            height 90vh;      
     }
         .container {
             padding-top: 15px;
             justify-content: stretch;   
             align-content: stretch;     
-            display: grid;
+            display: flex;
             grid-template-columns: 20vw 20vw 20vw 20vw ;
             grid-template-rows: 10vh 40vh 20vh 19vh;
-            margin-left: 11%; 
+            margin-left: 8%; 
             margin-right: 6%;      
          }
          @media (max-width: 800px){
@@ -90,19 +93,25 @@ const Episodes = props => (
                 padding-top: 15px;
                 justify-content: stretch;   
                 align-content: stretch;     
-                display: grid;
+                display: flex;
                 grid-template-columns: 20vw 20vw 20vw 20vw ;
                 grid-template-rows: 8vh 35vh 20vh 19vh;
                 margin-left: 9%; 
                 margin-right: 9%;
-                font-size: 9px;     
+                font-size: 9px;    
+                flex-direction: column-reverse; 
              }
+             .img img {
+                height: 35vh;
+        }
              .img {
                 grid-column-start: 1;
                 grid-column-end: 5;
                 grid-row-start: 2;
                 grid-row-end: 3;
                 justify-self: center;
+                margin-top: 0;
+                text-align: center;
             }
             .summary {
                 grid-column-start: 1;
@@ -115,7 +124,7 @@ const Episodes = props => (
                 grid-column-end: 5;
                 grid-row-start: 3;
                 grid-row-end: 5;    
-                padding-top: 5vh;        
+                padding-top: 0vh;        
             }
             li {
                 list-style-type: none;

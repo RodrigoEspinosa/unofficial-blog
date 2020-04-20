@@ -5,9 +5,8 @@ import fetch from 'isomorphic-unfetch';
 const Cast = props => (
 
     <Layout>
+        <h1 className="title">{props.show.name}'s Unofficial Blog</h1>
         <div className="container">
-            <h1 className="title">{props.show.name}'s Unofficial Blog</h1>
-
             <div className="list">
                 <h2>Crew</h2>
                 {props.crew.length > 0 ? <ul>
@@ -33,6 +32,7 @@ const Cast = props => (
             align-items: center;
             justify-content: center;
             margin-bottom: 0px;
+            margin-top: 7vh;
         }
         .list {
             grid-column-start: 2;
@@ -43,8 +43,9 @@ const Cast = props => (
                 padding: 0;
                 align-items: center;
                 justify-content: center;
-                text-align: center
-
+                
+                flex: 1;
+text-align: center
         }
         li {
             list-style-type: none;
@@ -62,20 +63,19 @@ const Cast = props => (
                 grid-row-end: 5;
                 justify-self: center;
                 margin-top: 7vh;
-                margin-left: 0vw;
+                margin-left: 2vw;
         }
         .img img {
-            object-fit: cover;
-           max-height: 100%;         
+           height: 90vh;       
     }
         .container {
             padding-top: 15px;
             justify-content: stretch;   
             align-content: stretch;     
-            display: grid;
+            display: flex;
             grid-template-columns: 7vw 35vw 20vw 20vw ;
             grid-template-rows: 10vh 40vh 30vh 15vh;
-            margin-left: 6%; 
+            margin-left: 4%; 
             margin-right: 6%;      
          }
          @media (max-width: 800px){
@@ -88,12 +88,13 @@ const Cast = props => (
                 padding-top: 15px;
                 justify-content: stretch;   
                 align-content: stretch;     
-                display: grid;
+                display: flex;
                 grid-template-columns: 20vw 20vw 20vw 20vw ;
                 grid-template-rows: 12vh 25vh 20vh 19vh;
                 margin-left: 9%; 
                 margin-right: 9%;
-                font-size: 9px;     
+                font-size: 9px;   
+                flex-direction: column-reverse;    
              }
              .img {
                 grid-column-start: 1;
@@ -102,7 +103,11 @@ const Cast = props => (
                 grid-row-end: 3;
                 justify-self: center;
                 margin: 0;
+                text-align: center;
             }
+            .img img {
+                height: 35vh;
+        }
             .list {
                 grid-column-start: 1;
                 grid-column-end: 5;

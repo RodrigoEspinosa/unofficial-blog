@@ -6,8 +6,9 @@ import React from "react"
 
 const Blog = props => (
     <Layout>
+        <h1 className="title">{props.data.name}'s unofficial Blog</h1>
         <div className="container">
-            <h1 className="title">{props.data.name}'s unofficial Blog</h1>
+
             <div className="summary">
 
                 <p>{props.data.summary.replace(/<[^>]*>?/gm, '')}</p>
@@ -45,6 +46,7 @@ const Blog = props => (
                 grid-row-start: 2;
                 grid-row-end: 3;
                 padding: 10px 15px 10px 20px;
+                flex: 1;
             }
             .list {
                 grid-column-start: 1;
@@ -61,8 +63,7 @@ const Blog = props => (
                 margin-top: 20px;
             }
             .img img {
-                    object-fit: cover;
-                   max-height: 100%;   
+                  height: 90vh;
   
             }
             .title {
@@ -74,15 +75,14 @@ const Blog = props => (
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 0px;
+                margin-top: 7vh;
             }
             .container {
                     padding-top: 15px;
                     justify-content: stretch;   
                     align-content: stretch;     
-                    display: grid;
-                    grid-template-columns: 20vw 20vw 20vw 30vw ;
-                    grid-template-rows: 10vh 45vh 20vh 19vh;
-                    margin-left: 8%; 
+                    display: flex;
+                    margin-left: 5%; 
                     margin-right: 6%;
                  }
             ul {
@@ -110,16 +110,20 @@ const Blog = props => (
                 Layout {
                     font-size: 10px;
                 }
+                .img img {
+                    height: 35vh;
+            }
                 .container {
                     padding-top: 15px;
                     justify-content: stretch;   
                     align-content: stretch;     
-                    display: grid;
+                    display: flex;
                     grid-template-columns: 20vw 20vw 20vw 20vw ;
                     grid-template-rows: 8vh 42vh 20vh 19vh;
                     margin-left: 9%; 
                     margin-right: 9%;
-                    font-size: 9px;     
+                    font-size: 9px;   
+                    flex-direction: column-reverse;  
                  }
                  .img {
                     grid-column-start: 1;
@@ -127,6 +131,8 @@ const Blog = props => (
                     grid-row-start: 2;
                     grid-row-end: 3;
                     justify-self: center;
+                    text-align:center;
+                    margin-top: 0vh;
                 }
                 .summary {
                     grid-column-start: 1;
